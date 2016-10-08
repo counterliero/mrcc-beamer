@@ -1,0 +1,50 @@
+\mode<presentation>
+\pgfdeclareimage[height=1cm]{logo}{img/mrcc}
+\if@agwi%
+	\pgfdeclareimage[height=1cm]{logo}{img/agwi}
+\fi
+\if@ucc%
+	\pgfdeclareimage[height=1cm]{logo}{img/ucc}
+\fi
+\if@vlba%
+	\pgfdeclareimage[height=1cm]{logo}{img/vlba}
+\fi
+\definecolor{finblue}{RGB}{1,104,181}
+
+\defbeamertemplate*{footline}{MRCC}
+{
+	\leavevmode%
+	\hbox{%
+		\begin{beamercolorbox}[wd=.2\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+			\usebeamerfont{author in head/foot}\insertshortauthor~~
+		\end{beamercolorbox}%
+		\begin{beamercolorbox}[wd=.2\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+			%\usebeamerfont{title in head/foot}\insertshorttitle
+		\end{beamercolorbox}%
+		\begin{beamercolorbox}[wd=.6\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+			\usebeamerfont{title in head/foot}\insertshorttitle\hspace*{2em} 
+			%\insertframenumber{}\hspace*{2em} 
+		\end{beamercolorbox}
+	}%
+	\vskip0pt%
+}
+
+\defbeamertemplate*{headline}{MRCC}
+{
+	\begin{minipage}{.7\paperwidth}
+		\begin{beamercolorbox}[sep=4pt]{logotitle}
+			\pgfuseimage{logo}
+		\end{beamercolorbox}
+	\end{minipage}
+	\begin{minipage}{.28\paperwidth}
+		\raggedleft
+		{\fontsize{5}{5} \selectfont \session ~$|$ \semester ~$|$ \insertframenumber ~/ \inserttotalframenumber}
+		\vspace*{0.7cm}
+	\end{minipage}
+	%\begin{minipage}{\paperwidth}
+		%\insertsectionnavigationhorizontal{.5\textwidth}{\hskip0pt plus1filll}{}
+	%\end{minipage}
+}
+
+\mode
+<all>

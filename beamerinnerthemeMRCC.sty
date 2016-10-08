@@ -1,0 +1,138 @@
+\mode<presentation>
+
+\pgfdeclareimage[width=14pt,height=12pt]{beamericonbook}{beamericonbook}
+\pgfdeclareimage[width=14pt,height=12pt]{beamericonbookshaded}{beamericonbook.20}
+\pgfaliasimage{beamericonbook.!20opaque}{beamericonbookshaded}
+\pgfaliasimage{beamericonbook.!15opaque}{beamericonbookshaded}
+\pgfaliasimage{beamericonbook.!10opaque}{beamericonbookshaded}
+\pgfaliasimage{beamericonbook.!5opaque}{beamericonbookshaded}
+\pgfaliasimage{beamericonbook.!2opaque}{beamericonbookshaded}
+\pgfdeclareimage[width=11pt,height=14pt]{beamericonarticle}{beamericonarticle}
+\pgfdeclareimage[width=11pt,height=14pt]{beamericonarticleshaded}{beamericonarticle.20}
+\pgfaliasimage{beamericonarticle.!20opaque}{beamericonarticleshaded}
+\pgfaliasimage{beamericonarticle.!15opaque}{beamericonarticleshaded}
+\pgfaliasimage{beamericonarticle.!10opaque}{beamericonarticleshaded}
+\pgfaliasimage{beamericonarticle.!5opaque}{beamericonarticleshaded}
+\pgfaliasimage{beamericonarticle.!2opaque}{beamericonarticleshaded}
+\pgfdeclareimage[width=\linewidth]{logofront}{img/mrcc}
+\if@agwi%
+	\pgfdeclareimage[width=\linewidth]{logofront}{img/agwi}
+	\pgfdeclareimage[width=.7\paperwidth]{agwiouter}{img/agwi}
+\fi
+\if@ucc%
+	\pgfdeclareimage[width=\linewidth]{logofront}{img/ucc}
+	\pgfdeclareimage[width=.7\paperwidth]{uccouter}{img/ucc}
+\fi
+\if@vlba%
+	\pgfdeclareimage[width=\linewidth]{logofront}{img/vlba}
+	\pgfdeclareimage[width=.7\paperwidth]{vlbaouter}{img/vlba}
+\fi
+\definecolor{stanzi@other}{RGB}{1,104,181}
+
+\defbeamertemplate*{title page}{MRCC}[1][]
+{
+	\vfill
+	\vskip3.5em
+	\begin{beamercolorbox}[sep=0cm,#1]{logotitle}
+		\pgfuseimage{logofront}
+	\end{beamercolorbox}
+	\vskip3em
+	\begin{beamercolorbox}[sep=0pt,#1]{title}
+		\usebeamerfont{title}\inserttitle\par%
+		\ifx\insertsubtitle\@empty%
+		\else%
+			\vskip0.25em%
+			{\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
+		\fi%
+
+	 \end{beamercolorbox}%
+	 \vskip1em\par
+	 \begin{beamercolorbox}[sep=2pt,#1]{author}
+		%\usebeamerfont{author}\insertauthor
+	 \end{beamercolorbox}
+	 \begin{beamercolorbox}[sep=2pt,#1]{institute}
+		%\usebeamerfont{institute}\insertinstitute
+	 \end{beamercolorbox}
+	 \begin{beamercolorbox}[sep=2pt,#1]{date}
+		%\usebeamerfont{date}\insertdate
+	 \end{beamercolorbox}\vskip0.5em
+	 \begin{beamercolorbox}[wd=\paperwidth, ht=2.84cm]{postit}
+	  \begin{minipage}{.48\paperwidth}
+		 \tiny
+		\raggedleft
+		\textbf{Magdeburg Research and Competence Cluster}\\
+		\if@agwi%
+			Arbeitsgruppe Wirtschaftsinformatik I\\[0.3cm]
+		\fi
+		\if@ucc%
+			SAP University Competence Center\\[0.3cm]
+		\fi
+		\if@vlba%
+			Very Large Business Applications Lab\\[0.3cm]
+		\fi
+		\if@german%
+			Fakult\"at f\"ur Informatik\\
+			\if@ucc%
+				~\\[0.3cm]
+			\else
+				Institut f\"ur Technische und Betriebliche Informationssysteme\\[0.3cm]
+			\fi
+			Otto-von-Guericke-Universit\"at Magdeburg
+		\else
+			Faculty of Computer Science\\
+			\if@ucc%
+			\else
+				Department of Technical an Business Information Systems\\[0.3cm]
+			\fi
+			Otto-von-Guericke-University Magdeburg
+		\fi
+		\vspace*{3.6cm}
+	  \end{minipage}
+	  \begin{minipage}{.01\paperwidth}
+		\rule[0mm]{0.2mm}{2.5cm}
+		\vspace*{3cm}
+	  \end{minipage}
+	  \begin{minipage}{.48\paperwidth}
+		 \vspace{0pt}\raggedleft
+		 \tiny
+		\textbf{\insertauthor}\\[0.45cm]
+		\insertinstitute\\
+		mrcc.ovgu.de\\[0.3cm]
+		\insertdate
+		\vspace*{3.5cm}
+	  \end{minipage}
+		\vbox{
+		\vskip5cm%
+		}
+	 \end{beamercolorbox}
+}
+
+
+\defbeamertemplate*{section in toc}{MRCC}
+{\inserttocsection\par}
+
+\defbeamertemplate*{subsection in toc}{MRCC}
+{\leavevmode\leftskip=1.5em\inserttocsubsection\par}
+
+\defbeamertemplate*{subsubsection in toc}{MRCC}
+{\leavevmode\normalsize\usebeamerfont{subsection in toc}\leftskip=3em%
+  \usebeamerfont{subsubsection in toc}\inserttocsubsubsection\par}
+
+  
+\defbeamertemplate*{section in toc shaded}{MRCC}[1][20]
+{\begin{colormixin}{#1!parent.bg}\usebeamertemplate{section in toc}\end{colormixin}\unskip}
+
+\defbeamertemplate*{subsection in toc shaded}{MRCC}[1][20]
+{\begin{colormixin}{#1!parent.bg}\usebeamertemplate{subsection in toc}\end{colormixin}\unskip}
+
+\defbeamertemplate*{subsubsection in toc shaded}{MRCC}[1][20]
+{\begin{colormixin}{#1!parent.bg}\usebeamertemplate{subsubsection in toc}\end{colormixin}\unskip}
+
+
+\defbeamertemplate*{itemize item}{MRCC}{\scriptsize\raise1.25pt\hbox{\donotcoloroutermaths$\bullet$}}
+\defbeamertemplate*{itemize subitem}{MRCC}{\tiny\raise1.5pt\hbox{\donotcoloroutermaths$\bullet$}}
+\defbeamertemplate*{itemize subsubitem}{MRCC}{\tiny\raise1.5pt\hbox{\donotcoloroutermaths$\bullet$}}
+
+
+\defbeamertemplate*{enumerate item}{MRCC}{\insertenumlabel.}
+\defbeamertemplate*{enumerate subitem}{MRCC}{\insertenumlabel.\insertsubenumlabel}

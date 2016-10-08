@@ -1,0 +1,94 @@
+\documentclass{beamer}
+\usetheme[vlba,german]{MRCC} %use agwi, ucc or vlba as parameter. Leave blank for MRCC branding ;)
+\usefonttheme{structurebold}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{url}
+\usepackage{pdfpages}
+\usepackage{graphs}
+
+\newcommand{\mail}{\institute}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Your Part starts here :) %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{MRCC \LaTeX Template}
+\subtitle{Awesome!}
+
+\date{\today}
+
+\author{Matthias Splieth}
+\mail{matthias.splieth@ovgu.de}
+
+\newcommand{\session}{Lecture}
+\newcommand{\semester}{Semester}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Slides %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\begin{frame}[plain]
+	\titlepage
+\end{frame}
+
+\section[Agenda]{}
+\begin{frame}
+\frametitle{Agenda}
+	\tableofcontents
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Motivation}
+\begin{frame}
+\frametitle{Motivation}
+	\begin{itemize}
+		\item Test
+	\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Figures}
+\begin{frame}
+\frametitle{Graphs}
+	\begin{figure}
+	\begin{center}
+			\begin{graph}(4,4)
+				\fillednodestrue
+				\graphnodecolour(255,255,255)
+			\graphnodesize{0.6}
+		\rectnode{x1}[0,0](0,3)
+		\roundnode{theta}(2,1)
+		\nodetext{theta}{$\theta$}
+		\diredge{x1}{theta}
+		\edgetext{x1}{theta}{$w_1$}
+		\nodetext{x1}{$x_1$}
+		
+		\rectnode{x2}[0,0](0,2)
+		\nodetext{x2}{$x_2$}
+		\diredge{x2}{theta}
+		\edgetext{x2}{theta}{$w_2$}
+		
+		\rectnode{xn}[0,0](0,0)
+		\nodetext{xn}{$x_n$}
+		\diredge{xn}{theta}
+		\edgetext{xn}{theta}{$w_n$}
+		
+		\rectnode{dots}[0,0](0,1)
+		\nodetext{dots}{\vdots}
+		
+		\rectnode{y}[0,0](3.5,1)
+		\nodetext{y}(0.5,0){$y$}
+		\diredge{theta}{y}
+		
+	\end{graph}
+	\end{center}
+	\caption{Grafische Darstellung eines Perzeptrons}
+	\label{figerzeptron}
+	\end{figure}	
+\end{frame}
+
+\end{document}

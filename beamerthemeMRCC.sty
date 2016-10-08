@@ -1,0 +1,33 @@
+\ProvidesPackage{mrcc}
+
+\newif\if@agwi
+\@agwifalse
+\DeclareOption{agwi}{%
+  \@agwitrue
+}
+
+\newif\if@ucc
+\@uccfalse
+\DeclareOption{ucc}{%
+  \@ucctrue
+}
+
+\newif\if@vlba
+\@vlbafalse
+\DeclareOption{vlba}{%
+  \@vlbatrue
+}
+
+\newif\if@german
+\@germanfalse
+\DeclareOption{german}{%
+  \@germantrue
+}
+\ProcessOptions
+
+\mode<presentation>
+\useinnertheme{MRCC}
+\useoutertheme{MRCC}
+\usecolortheme{MRCC}
+
+\setbeamerfont{block title}{size={}}
